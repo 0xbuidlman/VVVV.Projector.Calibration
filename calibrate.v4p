@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
    <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\calibrate.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping1\4. 3D mapping.v4p" locked="0" systemname="4. 3D mapping">
-   <BOUNDS height="17340" left="12000" top="0" type="Window" width="12180">
+   <BOUNDS height="17340" left="11730" top="0" type="Window" width="12180">
    </BOUNDS>
    <LINK dstnodeid="34" dstpinname="Y Input Value" srcnodeid="22" srcpinname="Mouse XYZ">
    </LINK>
@@ -77,7 +77,7 @@
    </PIN>
    <PIN pinname="Reset" visible="1">
    </PIN>
-   <PIN pinname="Mouse dXYL" visible="1" slicecount="1" values="0,0,0">
+   <PIN pinname="Mouse dXYL" visible="1" slicecount="3" values="0,0,0">
    </PIN>
    <PIN pinname="Reset point" visible="1" slicecount="1" values="0">
    </PIN>
@@ -245,6 +245,8 @@
    </PIN>
    <PIN pinname="Input 2" visible="1">
    </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="VIEW">
+   </PIN>
    </NODE>
    <LINK dstnodeid="54" dstpinname="Switch" linkstyle="VHV" srcnodeid="53" srcpinname="Y Output Value">
    <LINKPOINT x="7165" y="14883">
@@ -262,6 +264,8 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="PROJECTION">
    </PIN>
    </NODE>
    <LINK dstnodeid="56" dstpinname="Input 1" linkstyle="VHV" srcnodeid="41" srcpinname="Cahnge">
@@ -605,9 +609,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="106">
-   <BOUNDS type="Node" left="4905" top="11235" width="100" height="100">
+   <BOUNDS type="Node" left="4530" top="11235" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4905" top="11235" width="945" height="240">
+   <BOUNDS type="Box" left="4530" top="11235" width="945" height="240">
    </BOUNDS>
    <PIN pinname="Value Type" slicecount="1" values="Boolean">
    </PIN>
@@ -640,7 +644,11 @@
    </NODE>
    <LINK srcnodeid="106" srcpinname="Y Output Value" dstnodeid="107" dstpinname="Select">
    </LINK>
-   <LINK srcnodeid="99" srcpinname="Output" dstnodeid="107" dstpinname="Input">
+   <LINK srcnodeid="99" srcpinname="Output" dstnodeid="107" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="1305" y="11490">
+   </LINKPOINT>
+   <LINKPOINT x="3405" y="11490">
+   </LINKPOINT>
    </LINK>
    <NODE systemname="Select (Value)" nodename="Select (Value)" componentmode="Hidden" id="108">
    <BOUNDS type="Node" left="1275" top="11670" width="100" height="100">
@@ -662,7 +670,7 @@
    <LINKPOINT x="1970" y="10690">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="109">
+   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="109" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="9300" top="11250" width="100" height="100">
    </BOUNDS>
    <PIN pinname="OnChange" visible="1">
@@ -670,7 +678,7 @@
    <PIN pinname="Input" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="OR (Boolean Spectral)" nodename="OR (Boolean Spectral)" componentmode="Hidden" id="110">
+   <NODE systemname="OR (Boolean Spectral)" nodename="OR (Boolean Spectral)" componentmode="Hidden" id="110" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="9285" top="11685" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
@@ -678,15 +686,15 @@
    <PIN pinname="Input" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="109" srcpinname="OnChange" dstnodeid="110" dstpinname="Input">
+   <LINK srcnodeid="109" srcpinname="OnChange" dstnodeid="110" dstpinname="Input" hiddenwhenlocked="1">
    </LINK>
-   <LINK srcnodeid="99" srcpinname="Output" dstnodeid="109" dstpinname="Input" linkstyle="VHV">
+   <LINK srcnodeid="99" srcpinname="Output" dstnodeid="109" dstpinname="Input" linkstyle="VHV" hiddenwhenlocked="1">
    <LINKPOINT x="1335" y="10928">
    </LINKPOINT>
    <LINKPOINT x="9300" y="10928">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="111">
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="111" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="9300" top="12180" width="1620" height="270">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
@@ -700,7 +708,7 @@
    <PIN pinname="Input 3" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="110" srcpinname="Output" dstnodeid="111" dstpinname="Input 1">
+   <LINK srcnodeid="110" srcpinname="Output" dstnodeid="111" dstpinname="Input 1" hiddenwhenlocked="1">
    </LINK>
    <NODE componentmode="Hidden" filename="%VVVV%\addonpack\lib\nodes\modules\Image\OpenCV\CalibrateProjector (OpenCV).v4p" id="44" nodename="CalibrateProjector (OpenCV)" systemname="CalibrateProjector (CV.Transform)" stayontop="0">
    <BOUNDS height="270" left="1275" top="12765" type="Node" width="8085">
@@ -748,7 +756,7 @@
    <LINKPOINT x="2790" y="14033">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="111" srcpinname="Output" dstnodeid="44" dstpinname="Solve">
+   <LINK srcnodeid="111" srcpinname="Output" dstnodeid="44" dstpinname="Solve" hiddenwhenlocked="1">
    </LINK>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="112">
    <BOUNDS type="Node" left="1080" top="17295" width="1770" height="270">
@@ -862,7 +870,7 @@
    <LINKPOINT x="3870" y="4253">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="118">
+   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="118" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="615" top="13665" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
@@ -870,7 +878,7 @@
    <PIN pinname="Input" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="119">
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="119" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="615" top="14130" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
@@ -880,15 +888,15 @@
    <PIN pinname="Input 2" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="119" srcpinname="Output" dstnodeid="97" dstpinname="Switch" linkstyle="VHV">
+   <LINK srcnodeid="119" srcpinname="Output" dstnodeid="97" dstpinname="Switch" linkstyle="VHV" hiddenwhenlocked="1">
    <LINKPOINT x="675" y="14505">
    </LINKPOINT>
    <LINKPOINT x="1020" y="14505">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="118" srcpinname="Output" dstnodeid="119" dstpinname="Input 1">
+   <LINK srcnodeid="118" srcpinname="Output" dstnodeid="119" dstpinname="Input 1" hiddenwhenlocked="1">
    </LINK>
-   <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="119" dstpinname="Input 2" linkstyle="VHV">
+   <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="119" dstpinname="Input 2" linkstyle="VHV" hiddenwhenlocked="1">
    <LINKPOINT x="7275" y="13943">
    </LINKPOINT>
    <LINKPOINT x="1140" y="13943">
@@ -898,16 +906,6 @@
    <LINKPOINT x="11010" y="8070">
    </LINKPOINT>
    <LINKPOINT x="675" y="8070">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="51" srcpinname="Mouse dXYL" dstnodeid="41" dstpinname="Mouse dXYL" linkstyle="PolyLine" hiddenwhenlocked="1">
-   <LINKPOINT x="1110" y="18990">
-   </LINKPOINT>
-   <LINKPOINT x="480" y="18975">
-   </LINKPOINT>
-   <LINKPOINT x="495" y="7200">
-   </LINKPOINT>
-   <LINKPOINT x="1965" y="7200">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="54" srcpinname="Output" dstnodeid="51" dstpinname="View" linkstyle="VHV">
@@ -926,34 +924,6 @@
    <BOUNDS type="Box" left="8865" top="19560" width="2625" height="1365">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" encoded="0" values="|//use SaveViewProjection and LoadViewProjection from the Modules folder in this tutorial if you want to use these transforms whilst this patch isn&apos;t running (e.g. in your own project patch).|">
-   </PIN>
-   <PIN pinname="Output String" visible="0">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="MultiLine">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="124" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="6225" top="16665" width="600" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="6225" top="16665" width="600" height="270">
-   </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" encoded="0" values="//view">
-   </PIN>
-   <PIN pinname="Output String" visible="0">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="MultiLine">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="125" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="8610" top="16710" width="1035" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="8610" top="16710" width="1035" height="270">
-   </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" encoded="0" values="//projection">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -1164,24 +1134,26 @@
    <LINKPOINT x="750" y="15953">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="107" srcpinname="Output" dstnodeid="44" dstpinname="Projection XY">
-   </LINK>
    <LINK srcnodeid="108" srcpinname="Output" dstnodeid="44" dstpinname="World XYZ">
    </LINK>
-   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="111" dstpinname="Input 3">
+   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="111" dstpinname="Input 3" hiddenwhenlocked="1">
    </LINK>
-   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="138">
+   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="138" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="10080" top="11685" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Bang" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="138" srcpinname="Bang" dstnodeid="111" dstpinname="Input 2">
+   <LINK srcnodeid="138" srcpinname="Bang" dstnodeid="111" dstpinname="Input 2" hiddenwhenlocked="1">
    </LINK>
    <NODE systemname="MapNormalisedToCamera (CV.Transform)" filename="%VVVV%\packs\imagepack\nodes\modules\Image\OpenCV\MapNormalisedToCamera (CV.Transform).v4p" nodename="MapNormalisedToCamera (CV.Transform)" componentmode="Hidden" id="139">
    <BOUNDS type="Node" left="3360" top="12195" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Resolution" slicecount="2" values="1280,720">
    </PIN>
    </NODE>
    <LINK srcnodeid="107" srcpinname="Output" dstnodeid="139" dstpinname="Input">
@@ -1210,4 +1182,56 @@
    </PACK>
    <PACK Name="addonpack" Version="31.9.0">
    </PACK>
+   <LINK srcnodeid="139" srcpinname="Output" dstnodeid="44" dstpinname="Projection XY" linkstyle="VHV">
+   <LINKPOINT x="3360" y="12600">
+   </LINKPOINT>
+   <LINKPOINT x="2670" y="12600">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="142" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5595" top="11430" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5595" top="11430" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" values="1920,1080">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="px">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Resolution">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="142" srcpinname="Y Output Value" dstnodeid="139" dstpinname="Resolution" linkstyle="VHV">
+   <LINKPOINT x="5580" y="12045">
+   </LINKPOINT>
+   <LINKPOINT x="5385" y="12045">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="S (Value)" nodename="S (Value)" componentmode="Hidden" id="143" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1080" top="18465" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Send String" slicecount="1" values="ProjMouseCoord">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="51" srcpinname="Mouse dXYL" dstnodeid="143" dstpinname="Input Value" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="R (Value)" nodename="R (Value)" componentmode="Hidden" id="144" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1950" top="7545" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Receive String" slicecount="1" values="ProjMouseCoord">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="144" srcpinname="Input Value" dstnodeid="41" dstpinname="Mouse dXYL" hiddenwhenlocked="1">
+   </LINK>
    </PATCH>
