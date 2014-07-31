@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
    <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\calibrate.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping1\4. 3D mapping.v4p" locked="0" systemname="4. 3D mapping">
-   <BOUNDS height="17340" left="6390" top="-540" type="Window" width="12180">
+   <BOUNDS height="16020" left="2115" top="0" type="Window" width="12180">
    </BOUNDS>
    <LINK dstnodeid="34" dstpinname="Y Input Value" srcnodeid="22" srcpinname="Mouse XYZ">
    </LINK>
@@ -174,7 +174,7 @@
    <PIN pinname="Input String">
    </PIN>
    </NODE>
-   <NODE componentmode="InAWindow" filename="Subpatches\Renderer.Projection.v4p" id="51" nodename="Subpatches\Renderer.Projection.v4p" systemname="Renderer.Projection">
+   <NODE componentmode="Hidden" filename="Subpatches\Renderer.Projection.v4p" id="51" nodename="Subpatches\Renderer.Projection.v4p" systemname="Renderer.Projection">
    <BOUNDS height="270" left="1065" top="18000" type="Node" width="7500">
    </BOUNDS>
    <BOUNDS height="7695" left="-19020" top="3225" type="Window" width="6915">

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
    <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Mesh.SelectPoints.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Mesh.SelectPoints.v4p" systemname="Mesh.SelectPoints" locked="0">
-   <BOUNDS height="14685" left="6810" top="615" type="Window" width="13905">
+   <BOUNDS height="14685" left="9975" top="735" type="Window" width="13905">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="..\Modules\Intersect (3d Vector Ex9.Geometry Alt).v4p" id="0" nodename="Intersect (3d Vector Ex9.Geometry Alt)" systemname="Intersect (3d Vector Ex9.Geometry Alt)">
    <BOUNDS height="270" left="1350" top="3855" type="Node" width="8850">
@@ -183,7 +183,7 @@
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
-   <BOUNDS height="12840" left="14985" top="2460" type="Window" width="11475">
+   <BOUNDS height="12840" left="-15165" top="2025" type="Window" width="11475">
    </BOUNDS>
    <PIN pinname="Mouse XYZL" visible="1">
    </PIN>
