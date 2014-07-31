@@ -1,5 +1,7 @@
 # Introduction
-Methods and tutorials for projection mapping 3D objects where a physical mesh of the object is available. In the tutorials we use ReconstructMe to create a mesh using a kinect to 3D scan a scene (http://reconstructme.net).
+Methods and tutorials for projection mapping 3D objects where a physical mesh of the object is available. It basically allows to retrieve the extrinsics and instrinsics parameters of a projector based on manually defined correspondences between the 3D scene (3D world points) and the projection space of the projector (2D points).
+
+See also the [contribution page](http://vvvv.org/contribution/vvvv.tutorials.mapping.3d) of this tool for the DX11 version.
 
 # Methods present
 
@@ -13,22 +15,14 @@ Using OpenCV's CalibrateCamera method to find the intrinsics and extrinsics of t
 
 ### Prerequisites
 
-* vvvv24.1
-* OpenCV plugins (available at http://vvvv.org/contribution/opencv-plugin-%28alpha%29 )
+* vvvv24.1+
+* Elliot Woods' [VVVV.Packs.Image](http://vvvv.org/contribution/vvvv.packs.image) that wraps OpenCV (EmguCV)
 
-# Methods not present
 
-## Homography + Position (
+### Notes
 
-Homography and an arbitrary perspective are used to define the Projection matrix and the rotation element of the View matrix. This leaves 1 unknown (projector position) which can then be rapidly tweaked into position by the user
-
-### Inputs
-
-* 4 World to Projection correspondences
-* 3D position of projector (easy to tweak when 4 correspondences are locked)
-
-### Prerequisites
-
-* vvvv27.2 http://vvvv.org/downloads
-* VVVV.Nodes.OpenCV http://vvvv.org/sites/all/modules/general/pubdlcnt/pubdlcnt.php?file=http://vvvv.org/sites/default/files/uploads/VVVV.Nodes_.OpenCV_2.zip&nid=71857
-
+* Probably due to some misunderstandings from my part, I got the correct pose estimated with the following configurations:
+	* Points in projective space (XY) converted to OpenCV's image coordinate using the node "MapNormalisedToCamera"
+	* Input Space: pixels
+	* Inside "CalibrateProjector": Coordinates: OpenCV
+	* RTT the projector's renderer and rotate the texture by (0,0,0.5)
