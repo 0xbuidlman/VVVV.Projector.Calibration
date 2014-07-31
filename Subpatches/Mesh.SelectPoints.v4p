@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.dtd" >
-   <PATCH nodename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Mesh.SelectPoints.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Mesh.SelectPoints.v4p" systemname="Mesh.SelectPoints" locked="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Mesh.SelectPoints.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Mesh.SelectPoints.v4p" systemname="Mesh.SelectPoints" locked="0">
    <BOUNDS height="14685" left="6810" top="615" type="Window" width="13905">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="..\Modules\Intersect (3d Vector Ex9.Geometry Alt).v4p" id="0" nodename="Intersect (3d Vector Ex9.Geometry Alt)" systemname="Intersect (3d Vector Ex9.Geometry Alt)">
@@ -86,18 +86,20 @@
    <PIN pinname="Input 3" visible="1">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" id="45" nodename="Keyboard (System Global)" systemname="Keyboard (System Global)">
+   <NODE componentmode="Hidden" id="45" nodename="Keyboard (System Global)" systemname="Keyboard (System Global Legacy2)">
    <BOUNDS height="100" left="4350" top="4395" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Keyboard Output" visible="1">
+   </PIN>
+   <PIN pinname="Keyboard" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="62" systemname="IOBox (String)">
    <BOUNDS type="Node" left="5220" top="4365" width="4290" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="5220" top="4365" width="1080" height="1245">
+   <BOUNDS type="Box" left="5220" top="4365" width="1185" height="1170">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" encoded="0" values="|//don&apos;t move points if we&apos;re pressing a button (e.g. o, p, z)|">
+   <PIN pinname="Input String" visible="0" slicecount="1" encoded="0" values="|//don&apos;t move points if we&apos;re pressing a camera control button|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -888,14 +890,14 @@
    <LINKPOINT x="8565" y="14438">
    </LINKPOINT>
    </LINK>
-   <NODE componentmode="Hidden" id="46" nodename="KeyMatch (String)" systemname="KeyMatch (String)">
-   <BOUNDS height="100" left="4350" top="4770" type="Node" width="100">
+   <NODE componentmode="Hidden" id="46" nodename="KeyMatch (String)" systemname="KeyMatch (Keyboard)">
+   <BOUNDS height="270" left="4350" top="4770" type="Node" width="825">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Key Match" slicecount="1" encoded="0" values="|P,Z,M,O|">
+   <PIN pinname="Key Match" slicecount="1" encoded="0" values="|S,D,M,F|">
    </PIN>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -907,32 +909,34 @@
    </PIN>
    <PIN pinname="O Output" visible="1">
    </PIN>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   <PIN pinname="M" visible="1">
+   </PIN>
+   <PIN pinname="S" visible="1">
+   </PIN>
+   <PIN pinname="D" visible="1">
+   </PIN>
+   <PIN pinname="F" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="131">
    <BOUNDS type="Node" left="4350" top="5175" width="840" height="270">
    </BOUNDS>
    <PIN pinname="Input Count" slicecount="1" values="4">
    </PIN>
-   <PIN pinname="Input 1" visible="1">
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Input 2" visible="1">
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Input 3" visible="1">
+   <PIN pinname="Input 3" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Input 4" visible="1">
+   <PIN pinname="Input 4" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="45" srcpinname="Keyboard Output" dstnodeid="46" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="46" srcpinname="P Output" dstnodeid="131" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="46" srcpinname="Z Output" dstnodeid="131" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="46" srcpinname="M Output" dstnodeid="131" dstpinname="Input 3">
-   </LINK>
-   <LINK srcnodeid="46" srcpinname="O Output" dstnodeid="131" dstpinname="Input 4">
    </LINK>
    <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="135">
    <BOUNDS type="Node" left="4350" top="5535" width="100" height="100">
@@ -1000,4 +1004,18 @@
    <LINKPOINT x="6645" y="2835">
    </LINKPOINT>
    </LINK>
+   <LINK srcnodeid="45" srcpinname="Keyboard" dstnodeid="46" dstpinname="Keyboard">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="M" dstnodeid="131" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="S" dstnodeid="131" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="D" dstnodeid="131" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="F" dstnodeid="131" dstpinname="Input 4">
+   </LINK>
+   <PACK Name="imagepack" Version="0.1.0">
+   </PACK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
    </PATCH>

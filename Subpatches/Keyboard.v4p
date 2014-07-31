@@ -3,7 +3,7 @@
    <BOUNDS type="Window" left="10650" top="7380" width="12330" height="5415">
    </BOUNDS>
    <NODE systemname="KeyMatch (Keyboard)" nodename="KeyMatch (String)" componentmode="Hidden" id="0">
-   <BOUNDS type="Node" left="1380" top="885" width="7755" height="270">
+   <BOUNDS type="Node" left="1380" top="1485" width="7755" height="270">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -223,7 +223,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Keyboard (System Window Legacy2)" nodename="Keyboard (System Window)" componentmode="Hidden" id="1">
-   <BOUNDS type="Node" left="1380" top="240" width="100" height="100">
+   <BOUNDS type="Node" left="1380" top="960" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Keyboard Output" visible="1">
    </PIN>
@@ -243,25 +243,47 @@
    <LINK srcnodeid="0" srcpinname="Tab" dstnodeid="7" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="0" srcpinname="Shift" dstnodeid="11" dstpinname="Input" linkstyle="VHV">
-   <LINKPOINT x="9075" y="1530">
+   <LINKPOINT x="9075" y="1930">
    </LINKPOINT>
-   <LINKPOINT x="8115" y="1530">
+   <LINKPOINT x="8115" y="1730">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="0" srcpinname="Shift" dstnodeid="10" dstpinname="Input 2" linkstyle="VHV">
-   <LINKPOINT x="9090" y="1793">
+   <LINKPOINT x="9090" y="2193">
    </LINKPOINT>
-   <LINKPOINT x="9060" y="1793">
+   <LINKPOINT x="9060" y="1993">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="0" srcpinname="Shift" dstnodeid="16" dstpinname="Y Input Value" linkstyle="VHV">
-   <LINKPOINT x="9105" y="2055">
+   <LINKPOINT x="9105" y="2455">
    </LINKPOINT>
-   <LINKPOINT x="9645" y="2055">
+   <LINKPOINT x="9645" y="2255">
    </LINKPOINT>
    </LINK>
    <PACK Name="imagepack" Version="0.1.0">
    </PACK>
    <PACK Name="addonpack" Version="31.9.0">
    </PACK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1365" top="240" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1365" top="240" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Enabled">
+   </LINK>
    </PATCH>

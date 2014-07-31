@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.dtd" >
-   <PATCH nodename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer World.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer World.v4p" systemname="Renderer World">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Renderer World.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer World.v4p" systemname="Renderer World">
    <BOUNDS height="12840" left="14985" top="2460" type="Window" width="11475">
    </BOUNDS>
    <NODE componentmode="InAWindow" id="7" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
@@ -11,7 +11,7 @@
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
-   <PIN pinname="View" visible="1">
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Projection" visible="1">
    </PIN>
@@ -38,28 +38,6 @@
    <PIN pinname="Aspect Ratio" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" id="6" nodename="Camera (Transform Softimage)" systemname="Camera (Transform Softimage)">
-   <BOUNDS height="100" left="5145" top="4305" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="View" visible="1">
-   </PIN>
-   <PIN pinname="Projection" visible="1">
-   </PIN>
-   <PIN pinname="Distortion" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Initial Yaw" slicecount="1" values="-0.05">
-   </PIN>
-   <PIN pinname="Inital Distance" slicecount="1" values="0.8">
-   </PIN>
-   <BOUNDS type="Box" left="5145" top="4305">
-   </BOUNDS>
-   <PIN pinname="View Projection" visible="1">
-   </PIN>
-   <PIN pinname="Near Plane" slicecount="1" values="0.01">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="7" dstpinname="View" srcnodeid="6" srcpinname="View">
-   </LINK>
    <NODE componentmode="Hidden" id="5" nodename="Scale (Transform)" systemname="Scale (Transform)">
    <BOUNDS height="100" left="7710" top="4005" type="Node" width="100">
    </BOUNDS>
@@ -93,7 +71,7 @@
    </BOUNDS>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Camera ViewProjection|">
    </PIN>
-   <PIN pinname="Input Node" visible="1">
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="17" nodename="Group (EX9)" systemname="Group (EX9)">
@@ -201,7 +179,7 @@
    <NODE componentmode="Hidden" hiddenwhenlocked="1" id="28" nodename="GetMatrix (Transform)" systemname="GetMatrix (Transform)">
    <BOUNDS height="100" left="1440" top="10515" type="Node" width="100">
    </BOUNDS>
-   <PIN pinname="Transform" visible="1">
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Matrix Out" visible="1">
    </PIN>
@@ -259,12 +237,6 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="25" dstpinname="Y Input Value" srcnodeid="26" srcpinname="Matrix Out" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="View" dstnodeid="28" dstpinname="Transform" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5295" y="7363">
-   </LINKPOINT>
-   <LINKPOINT x="1500" y="7713">
-   </LINKPOINT>
    </LINK>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="30">
    <BOUNDS type="Node" left="8295" top="300" width="100" height="100">
@@ -333,7 +305,7 @@
    </BOUNDS>
    <PIN pinname="XYZ UnTransformed" visible="1">
    </PIN>
-   <PIN pinname="Transform" visible="1">
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="XYZ Transformed" visible="1">
    </PIN>
@@ -369,7 +341,7 @@
    <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="41">
    <BOUNDS type="Node" left="5970" top="4935" width="1800" height="270">
    </BOUNDS>
-   <PIN pinname="Transform In 1" visible="1">
+   <PIN pinname="Transform In 1" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -380,12 +352,6 @@
    <PIN pinname="Transform In 3" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="6" srcpinname="Projection" dstnodeid="41" dstpinname="Transform In 1" linkstyle="VHV">
-   <LINKPOINT x="5520" y="4740">
-   </LINKPOINT>
-   <LINKPOINT x="5955" y="4740">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="41" srcpinname="Transform Out" dstnodeid="7" dstpinname="Projection">
    </LINK>
    <LINK srcnodeid="38" srcpinname="Transform Out" dstnodeid="41" dstpinname="Transform In 2">
@@ -474,12 +440,6 @@
    </LINK>
    <LINK srcnodeid="46" srcpinname="Position Out" dstnodeid="38" dstpinname="XYZ">
    </LINK>
-   <LINK srcnodeid="6" srcpinname="View Projection" dstnodeid="36" dstpinname="Transform" linkstyle="Bezier">
-   <LINKPOINT x="5205" y="3303">
-   </LINKPOINT>
-   <LINKPOINT x="8670" y="3253">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="SetSlice (Spreads)" nodename="SetSlice (Spreads)" componentmode="Hidden" id="49">
    <BOUNDS type="Node" left="8655" top="2355" width="100" height="100">
    </BOUNDS>
@@ -542,8 +502,6 @@
    <LINKPOINT x="6165" y="4898">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="6" srcpinname="View Projection" dstnodeid="2" dstpinname="Input Node">
-   </LINK>
    <NODE componentmode="InABox" id="53" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="0" left="7065" top="8145" type="Node" width="0">
    </BOUNDS>
@@ -561,7 +519,7 @@
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
-   <PIN pinname="Transform In 1" visible="1">
+   <PIN pinname="Transform In 1" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="41" srcpinname="Transform Out" dstnodeid="54" dstpinname="Transform In 2" linkstyle="Bezier">
@@ -572,10 +530,56 @@
    </LINK>
    <LINK srcnodeid="54" srcpinname="Transform Out" dstnodeid="53" dstpinname="Input Node">
    </LINK>
+   <NODE componentmode="Hidden" filename="..\..\vvvv.nodes\modules\Camera (Transform SDF).v4p" id="6" nodename="Camera (Transform SDF)" systemname="Camera (Transform SDF)">
+   <BOUNDS height="100" left="5145" top="4305" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Distortion" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="-0.05">
+   </PIN>
+   <PIN pinname="Inital Distance" slicecount="1" values="0.8">
+   </PIN>
+   <BOUNDS type="Box" left="5145" top="4305">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="Near Plane" slicecount="1" values="0.01">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="7" dstpinname="View" srcnodeid="6" srcpinname="View">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="View" dstnodeid="28" dstpinname="Transform" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5295" y="7363">
+   </LINKPOINT>
+   <LINKPOINT x="1500" y="7713">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Projection" dstnodeid="41" dstpinname="Transform In 1" linkstyle="VHV">
+   <LINKPOINT x="5520" y="4740">
+   </LINKPOINT>
+   <LINKPOINT x="5955" y="4740">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="View Projection" dstnodeid="36" dstpinname="Transform" linkstyle="Bezier">
+   <LINKPOINT x="5205" y="3303">
+   </LINKPOINT>
+   <LINKPOINT x="8670" y="3253">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="View Projection" dstnodeid="2" dstpinname="Input Node">
+   </LINK>
    <LINK srcnodeid="6" srcpinname="View" dstnodeid="54" dstpinname="Transform In 1" linkstyle="Bezier">
    <LINKPOINT x="5370" y="5918">
    </LINKPOINT>
    <LINKPOINT x="7050" y="5918">
    </LINKPOINT>
    </LINK>
+   <PACK Name="imagepack" Version="0.1.0">
+   </PACK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
    </PATCH>
