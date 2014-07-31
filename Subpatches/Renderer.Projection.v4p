@@ -1,13 +1,13 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.dtd" >
-   <PATCH nodename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer.Projection.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer.Projection.v4p" systemname="Renderer.Projection">
-   <BOUNDS height="7695" left="12765" top="3690" type="Window" width="6915">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
+   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Renderer.Projection.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer.Projection.v4p" systemname="Renderer.Projection">
+   <BOUNDS height="7695" left="-19020" top="3225" type="Window" width="6915">
    </BOUNDS>
-   <NODE componentmode="InAWindow" id="7" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <NODE componentmode="FullScreen" id="7" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
    <BOUNDS height="270" left="600" top="1890" type="Node" width="5355">
    </BOUNDS>
    <BOUNDS height="1800" left="600" top="1890" type="Box" width="2400">
    </BOUNDS>
-   <BOUNDS height="6405" left="0" top="7695" type="Window" width="11550">
+   <BOUNDS height="6405" left="38430" top="4050" type="Window" width="11550">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -29,11 +29,13 @@
    </PIN>
    <PIN pinname="Fullscreen Antialiasing Quality Level" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="|1024 x 768|">
+   <PIN pinname="Fullscreen Dimensions" slicecount="1" values="AsDesktop">
    </PIN>
    <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
    </PIN>
    <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="EX9 Out" visible="1">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="6" nodename="Vector (2d Join)" systemname="Vector (2d Join)">
@@ -300,4 +302,34 @@
    </NODE>
    <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="26" dstpinname="Enabled">
    </LINK>
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="4950" top="2670" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="2048">
+   </PIN>
+   <PIN pinname="Height" slicecount="1" values="2048">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="EX9 Out" dstnodeid="29" dstpinname="Source" linkstyle="VHV">
+   <LINKPOINT x="5895" y="2400">
+   </LINKPOINT>
+   <LINKPOINT x="5010" y="2400">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="30" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="4965" top="3960" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4965" top="3960" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="RTT">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="29" srcpinname="Texture Out" dstnodeid="30" dstpinname="Input Node">
+   </LINK>
+   <PACK Name="imagepack" Version="0.1.0">
+   </PACK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
    </PATCH>

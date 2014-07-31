@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
    <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\calibrate.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping1\4. 3D mapping.v4p" locked="0" systemname="4. 3D mapping">
-   <BOUNDS height="17340" left="11730" top="0" type="Window" width="12180">
+   <BOUNDS height="17340" left="6390" top="-540" type="Window" width="12180">
    </BOUNDS>
    <LINK dstnodeid="34" dstpinname="Y Input Value" srcnodeid="22" srcpinname="Mouse XYZ">
    </LINK>
@@ -11,11 +11,11 @@
    </PIN>
    <PIN pinname="Preview View Projection" visible="1">
    </PIN>
-   <PIN pinname="Transform Mesh" visible="1">
+   <PIN pinname="Transform Mesh" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Mesh" visible="1">
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
    </PIN>
-   <BOUNDS height="14685" left="6810" top="615" type="Window" width="13905">
+   <BOUNDS height="14685" left="9975" top="735" type="Window" width="13905">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -174,10 +174,10 @@
    <PIN pinname="Input String">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" filename="Subpatches\Renderer.Projection.v4p" id="51" nodename="Subpatches\Renderer.Projection.v4p" systemname="Renderer.Projection">
+   <NODE componentmode="InAWindow" filename="Subpatches\Renderer.Projection.v4p" id="51" nodename="Subpatches\Renderer.Projection.v4p" systemname="Renderer.Projection">
    <BOUNDS height="270" left="1065" top="18000" type="Node" width="7500">
    </BOUNDS>
-   <BOUNDS height="7695" left="12765" top="3690" type="Window" width="6915">
+   <BOUNDS height="7695" left="-19020" top="3225" type="Window" width="6915">
    </BOUNDS>
    <PIN pinname="Mouse dXYL" visible="1">
    </PIN>
@@ -192,6 +192,8 @@
    <PIN pinname="Projection" slicecount="1" visible="1" values="||">
    </PIN>
    <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="RTT" visible="1">
    </PIN>
    </NODE>
    <LINK dstnodeid="51" dstpinname="Projection XY" linkstyle="Bezier" srcnodeid="41" srcpinname="Output">
@@ -301,7 +303,7 @@
    <NODE systemname="Mesh" filename="Subpatches\Mesh.v4p" nodename="Subpatches\Mesh.v4p" componentmode="Hidden" id="77">
    <BOUNDS type="Node" left="165" top="3105" width="3765" height="270">
    </BOUNDS>
-   <PIN pinname="Filename" visible="1" encoded="0" slicecount="1" values="Media\scene.x">
+   <PIN pinname="Filename" visible="1" encoded="0" slicecount="1" values="..\cursar\data\SetupTable.dae">
    </PIN>
    <PIN pinname="Translate XYZ" slicecount="3" values="-0.94,0,1.05">
    </PIN>
@@ -309,27 +311,13 @@
    </PIN>
    <PIN pinname="Rotate XYZ" slicecount="3" values="0.25,0.1,0.08">
    </PIN>
-   <BOUNDS type="Window" left="12075" top="8415" width="12900" height="5280">
+   <BOUNDS type="Window" left="13800" top="2295" width="12900" height="5280">
    </BOUNDS>
    <PIN pinname="Preview" visible="1">
    </PIN>
-   <PIN pinname="Mesh" visible="1">
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="84" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="4755" top="2040" width="12810" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="4755" top="2040" width="3525" height="870">
-   </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" encoded="0" values="|//The model when imported can often be in a weird scale, moved and rotated in a strange way. To correct this just tweak these controls to get it near to the origin and in the view.|">
-   </PIN>
-   <PIN pinname="Output String" visible="0">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   <PIN pinname="Transform Out" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="77" srcpinname="Preview" dstnodeid="38" dstpinname="Layer 1">
@@ -727,6 +715,8 @@
    </PIN>
    <PIN pinname="Success" visible="1">
    </PIN>
+   <PIN pinname="Resolution" visible="1">
+   </PIN>
    </NODE>
    <LINK dstnodeid="46" dstpinname="Y Input Value" srcnodeid="44" srcpinname="Reprojection Error">
    </LINK>
@@ -1057,9 +1047,9 @@
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Mesh" visible="1">
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Transform" visible="1">
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Light Direction XYZ" visible="1">
    </PIN>
@@ -1163,7 +1153,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="10095" top="1590" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1174,6 +1164,8 @@
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="140" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Enabled">
@@ -1207,6 +1199,8 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Resolution">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="142" srcpinname="Y Output Value" dstnodeid="139" dstpinname="Resolution" linkstyle="VHV">
    <LINKPOINT x="5580" y="12045">
@@ -1233,5 +1227,87 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="144" srcpinname="Input Value" dstnodeid="41" dstpinname="Mouse dXYL" hiddenwhenlocked="1">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="145" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="165" top="2205" width="1755" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="165" top="2205" width="2685" height="735">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|// You have to edit the &quot;Mesh&quot; subpatch with your content/scene with appropriate scale and position|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="String">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="146">
+   <BOUNDS type="Node" left="3585" top="20265" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3585" top="20265" width="4635" height="3345">
+   </BOUNDS>
+   <BOUNDS type="Window" left="40065" top="1170" width="6240" height="5085">
+   </BOUNDS>
+   <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Flipped Projection|">
+   </PIN>
+   </NODE>
+   <NODE systemname="FullscreenQuad (DX9)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\misc\FullscreenQuad (DX9).v4p" nodename="FullscreenQuad (DX9)" componentmode="Hidden" id="147">
+   <BOUNDS type="Node" left="3570" top="19785" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Transform" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="148">
+   <BOUNDS type="Node" left="4425" top="19350" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Z" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="148" srcpinname="Transform Out" dstnodeid="147" dstpinname="Texture Transform">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="RTT" dstnodeid="147" dstpinname="Texture" linkstyle="Bezier">
+   <LINKPOINT x="8470" y="18983">
+   </LINKPOINT>
+   <LINKPOINT x="3665" y="19043">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="147" srcpinname="Layer" dstnodeid="146" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="149" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="1035" top="20220" width="5415" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1035" top="20220" width="2370" height="690">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|// When calibration is complete, swap the Projection rendrer with this one|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="String">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="142" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Resolution" linkstyle="VHV">
+   <LINKPOINT x="5625" y="12600">
+   </LINKPOINT>
+   <LINKPOINT x="3975" y="12600">
+   </LINKPOINT>
    </LINK>
    </PATCH>

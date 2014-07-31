@@ -3,8 +3,6 @@ Methods and tutorials for projection mapping 3D objects where a physical mesh of
 
 See also the [contribution page](http://vvvv.org/contribution/vvvv.tutorials.mapping.3d) of this tool for the DX11 version.
 
-# Methods present
-
 ## CalibrateProjector
 
 Using OpenCV's CalibrateCamera method to find the intrinsics and extrinsics of the projector (i.e. the projection and view matrices respectively).
@@ -12,6 +10,15 @@ Using OpenCV's CalibrateCamera method to find the intrinsics and extrinsics of t
 ### Inputs
 
 * 7 or more World to Projection correspondences
+
+### Controls
+* S: Orbit
+* D: Pan
+* F: Zoom
+* 1: Next point
+* 2: Previous point
+* Shift: Zoom to current point
+
 
 ### Prerequisites
 
