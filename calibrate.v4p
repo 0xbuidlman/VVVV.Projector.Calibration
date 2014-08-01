@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
    <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\calibrate.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping1\4. 3D mapping.v4p" locked="0" systemname="4. 3D mapping">
-   <BOUNDS height="16020" left="2115" top="0" type="Window" width="12180">
+   <BOUNDS height="16020" left="2415" top="180" type="Window" width="12180">
    </BOUNDS>
    <LINK dstnodeid="34" dstpinname="Y Input Value" srcnodeid="22" srcpinname="Mouse XYZ">
    </LINK>
@@ -341,7 +341,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="9510" top="3435" width="1635" height="240">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" encoded="0" values="mapping.xml">
+   <PIN pinname="Input String" slicecount="1" encoded="0" values="mapping_table.xml">
    </PIN>
    <PIN pinname="Default" slicecount="1" encoded="0" values="spreadtable.xml">
    </PIN>
@@ -467,7 +467,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="SwitchViewProjection" filename="Subpatches\SwitchViewProjection.v4p" nodename="Subpatches\SwitchViewProjection.v4p" componentmode="Hidden" id="97">
-   <BOUNDS type="Node" left="180" top="14640" width="2640" height="270">
+   <BOUNDS type="Node" left="180" top="15240" width="2640" height="270">
    </BOUNDS>
    <BOUNDS type="Window" left="9345" top="5370" width="7950" height="4440">
    </BOUNDS>
@@ -485,9 +485,9 @@
    <LINK srcnodeid="37" srcpinname="View Projection" dstnodeid="97" dstpinname="Camera ViewProjection">
    </LINK>
    <LINK srcnodeid="97" srcpinname="ViewProjection" dstnodeid="37" dstpinname="View Projection" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="210" y="11063">
+   <LINKPOINT x="210" y="11463">
    </LINKPOINT>
-   <LINKPOINT x="2355" y="9893">
+   <LINKPOINT x="2355" y="10093">
    </LINKPOINT>
    </LINK>
    <NODE systemname="AsValue (Table Value)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.SpreadTableValue.dll" nodename="AsValue (Table Value)" componentmode="Hidden" id="99">
@@ -717,6 +717,8 @@
    </PIN>
    <PIN pinname="Resolution" visible="1">
    </PIN>
+   <BOUNDS type="Box" left="1275" top="12765">
+   </BOUNDS>
    </NODE>
    <LINK dstnodeid="46" dstpinname="Y Input Value" srcnodeid="44" srcpinname="Reprojection Error">
    </LINK>
@@ -728,22 +730,10 @@
    <LINKPOINT x="8865" y="14465">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="44" srcpinname="View Transform" dstnodeid="54" dstpinname="Input 2" linkstyle="VHV">
-   <LINKPOINT x="1195" y="14290">
-   </LINKPOINT>
-   <LINKPOINT x="6725" y="14540">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="44" srcpinname="View Transform" dstnodeid="97" dstpinname="World" linkstyle="VHV">
-   <LINKPOINT x="1320" y="13613">
-   </LINKPOINT>
-   <LINKPOINT x="1890" y="14033">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="44" srcpinname="Projection Transform" dstnodeid="97" dstpinname="Projection" linkstyle="VHV">
-   <LINKPOINT x="3270" y="13613">
+   <LINKPOINT x="3270" y="13813">
    </LINKPOINT>
-   <LINKPOINT x="2790" y="14033">
+   <LINKPOINT x="2790" y="14433">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="111" srcpinname="Output" dstnodeid="44" dstpinname="Solve" hiddenwhenlocked="1">
@@ -759,9 +749,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="97" srcpinname="ViewProjection" dstnodeid="54" dstpinname="Input 1" linkstyle="Bezier">
-   <LINKPOINT x="655" y="15708">
+   <LINKPOINT x="655" y="16108">
    </LINKPOINT>
-   <LINKPOINT x="5900" y="15538">
+   <LINKPOINT x="5900" y="15738">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="112" srcpinname="Layer" dstnodeid="51" dstpinname="Layers">
@@ -861,7 +851,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="118" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="615" top="13665" width="100" height="100">
+   <BOUNDS type="Node" left="615" top="14415" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -869,7 +859,7 @@
    </PIN>
    </NODE>
    <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="119" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="615" top="14130" width="100" height="100">
+   <BOUNDS type="Node" left="615" top="14880" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -879,23 +869,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="119" srcpinname="Output" dstnodeid="97" dstpinname="Switch" linkstyle="VHV" hiddenwhenlocked="1">
-   <LINKPOINT x="675" y="14505">
+   <LINKPOINT x="675" y="15205">
    </LINKPOINT>
-   <LINKPOINT x="1020" y="14505">
+   <LINKPOINT x="1020" y="15155">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="118" srcpinname="Output" dstnodeid="119" dstpinname="Input 1" hiddenwhenlocked="1">
    </LINK>
    <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="119" dstpinname="Input 2" linkstyle="VHV" hiddenwhenlocked="1">
-   <LINKPOINT x="7275" y="13943">
+   <LINKPOINT x="7275" y="14193">
    </LINKPOINT>
-   <LINKPOINT x="1140" y="13943">
+   <LINKPOINT x="1140" y="14443">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="91" srcpinname="&lt;SHIFT&gt;" dstnodeid="118" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="11010" y="8070">
+   <LINKPOINT x="11010" y="8320">
    </LINKPOINT>
-   <LINKPOINT x="675" y="8070">
+   <LINKPOINT x="675" y="8570">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="54" srcpinname="Output" dstnodeid="51" dstpinname="View" linkstyle="VHV">
@@ -1275,7 +1265,7 @@
    <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="148">
    <BOUNDS type="Node" left="4425" top="19350" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Z" slicecount="1" values="0.5">
+   <PIN pinname="Z" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -1327,6 +1317,8 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Load">
    </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="150" srcpinname="Y Output Value" dstnodeid="85" dstpinname="Load">
    </LINK>
@@ -1351,5 +1343,73 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="151" srcpinname="Y Output Value" dstnodeid="85" dstpinname="Save">
+   </LINK>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="152">
+   <BOUNDS type="Node" left="1275" top="14250" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1275" top="14250" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="VIEW">
+   </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="153">
+   <BOUNDS type="Node" left="1275" top="13155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Source" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="154">
+   <BOUNDS type="Node" left="1275" top="13815" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (Transform 3d)" nodename="Transform (Transform 3d)" componentmode="Hidden" id="155">
+   <BOUNDS type="Node" left="1275" top="13485" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Roll" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="44" srcpinname="View Transform" dstnodeid="153" dstpinname="Source" linkstyle="VHV">
+   <LINKPOINT x="1305" y="13110">
+   </LINKPOINT>
+   <LINKPOINT x="1830" y="13110">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="153" srcpinname="Transform Out" dstnodeid="155" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="155" srcpinname="Transform Out" dstnodeid="154" dstpinname="Source" linkstyle="VHV">
+   <LINKPOINT x="1320" y="13790">
+   </LINKPOINT>
+   <LINKPOINT x="1815" y="13750">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="154" srcpinname="Transform Out" dstnodeid="152" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="152" srcpinname="Output Node" dstnodeid="97" dstpinname="World" linkstyle="Bezier">
+   <LINKPOINT x="1335" y="14858">
+   </LINKPOINT>
+   <LINKPOINT x="1905" y="14858">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="152" srcpinname="Output Node" dstnodeid="54" dstpinname="Input 2" linkstyle="VHV">
+   <LINKPOINT x="1305" y="15000">
+   </LINKPOINT>
+   <LINKPOINT x="7095" y="15000">
+   </LINKPOINT>
    </LINK>
    </PATCH>
