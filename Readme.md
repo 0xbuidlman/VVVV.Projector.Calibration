@@ -32,4 +32,4 @@ Using OpenCV's CalibrateCamera method to find the intrinsics and extrinsics of t
 	* Points in projective space (XY) converted to OpenCV's image coordinate using the node "MapNormalisedToCamera"
 	* Input Space: pixels
 	* Inside "CalibrateProjector": Coordinates: OpenCV
-	* RTT the projector's renderer and rotate the texture by (0,0,0.5)
+	* Rotate the view matrix by (0,0,0.5)
