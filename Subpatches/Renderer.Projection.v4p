@@ -1,13 +1,13 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
-   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Renderer.Projection.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer.Projection.v4p" systemname="Renderer.Projection">
-   <BOUNDS height="7695" left="-19020" top="3225" type="Window" width="6915">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.dtd" >
+   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Renderer.Projection.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer.Projection.v4p" systemname="Renderer.Projection" scrollx="0" scrolly="-360">
+   <BOUNDS height="7695" left="-19020" top="3225" type="Window" width="9495">
    </BOUNDS>
-   <NODE componentmode="FullScreen" id="7" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
+   <NODE componentmode="InAWindow" id="7" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
    <BOUNDS height="270" left="600" top="1890" type="Node" width="5355">
    </BOUNDS>
    <BOUNDS height="1800" left="600" top="1890" type="Box" width="2400">
    </BOUNDS>
-   <BOUNDS height="6405" left="38430" top="4050" type="Window" width="11550">
+   <BOUNDS height="4035" left="-45435" top="6420" type="Window" width="6480">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -36,6 +36,8 @@
    <PIN pinname="Fullscreen Depthbuffer Format" slicecount="1" values="D24X8">
    </PIN>
    <PIN pinname="EX9 Out" visible="1">
+   </PIN>
+   <PIN pinname="Window Handle" visible="1" pintype="Output">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="6" nodename="Vector (2d Join)" systemname="Vector (2d Join)">
@@ -124,36 +126,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" id="0" nodename="Vector (4d Join)" systemname="Vector (4d Join)">
-   <BOUNDS height="100" left="1950" top="2760" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="X" visible="1">
-   </PIN>
-   <PIN pinname="Y" visible="1">
-   </PIN>
-   <PIN pinname="W" visible="1">
-   </PIN>
-   <PIN pinname="XYZW" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="0" dstpinname="X" linkstyle="Bezier" srcnodeid="7" srcpinname="X">
-   <LINKPOINT x="860" y="2445">
-   </LINKPOINT>
-   <LINKPOINT x="1735" y="2445">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="0" dstpinname="Y" linkstyle="Bezier" srcnodeid="7" srcpinname="Y">
-   <LINKPOINT x="1505" y="2460">
-   </LINKPOINT>
-   <LINKPOINT x="1960" y="2460">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="0" dstpinname="W" linkstyle="Bezier" srcnodeid="7" srcpinname="Left Button">
-   <LINKPOINT x="2150" y="2460">
-   </LINKPOINT>
-   <LINKPOINT x="2350" y="2460">
-   </LINKPOINT>
-   </LINK>
    <NODE componentmode="InABox" id="9" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="0" left="600" top="555" type="Node" width="0">
    </BOUNDS>
@@ -246,22 +218,6 @@
    <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE systemname="Cursor (DX9)" filename="..\modules\Mouse Cursor (DX9).v4p" nodename="Cursor (DX9)" componentmode="Hidden" id="26">
-   <BOUNDS type="Node" left="2880" top="3255" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Mouse XYZL" visible="1">
-   </PIN>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="Enabled">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="0" srcpinname="XYZW" dstnodeid="26" dstpinname="Mouse XYZL" linkstyle="VHV">
-   <LINKPOINT x="2010" y="3128">
-   </LINKPOINT>
-   <LINKPOINT x="2880" y="3128">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="27">
    <BOUNDS type="Node" left="600" top="1275" width="100" height="100">
    </BOUNDS>
@@ -269,18 +225,12 @@
    </PIN>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Layer 2" visible="1">
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="9" srcpinname="Output Node" dstnodeid="27" dstpinname="Layer 1">
    </LINK>
    <LINK srcnodeid="27" srcpinname="Layer" dstnodeid="7" dstpinname="Layers">
-   </LINK>
-   <LINK srcnodeid="26" srcpinname="Layer" dstnodeid="27" dstpinname="Layer 2" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2880" y="2393">
-   </LINKPOINT>
-   <LINKPOINT x="930" y="2393">
-   </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="28" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="4140" top="540" width="0" height="0">
@@ -299,9 +249,9 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Calibrate">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="26" dstpinname="Enabled">
-   </LINK>
    <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="29">
    <BOUNDS type="Node" left="4950" top="2670" width="100" height="100">
    </BOUNDS>
@@ -330,6 +280,130 @@
    </LINK>
    <PACK Name="imagepack" Version="0.1.0">
    </PACK>
-   <PACK Name="addonpack" Version="31.9.0">
+   <PACK Name="addonpack" Version="33.0.0">
    </PACK>
+   <NODE systemname="Cursor (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\Cursor (DX9).v4p" nodename="Cursor (DX9)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="3300" top="3690" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Mouse" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="31" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="MouseStates (Mouse Join)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="MouseStates (Mouse Join)" componentmode="Hidden" id="32">
+   <BOUNDS type="Node" left="3285" top="3300" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mouse" visible="1">
+   </PIN>
+   <PIN pinname="PositionXY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="32" srcpinname="Mouse" dstnodeid="31" dstpinname="Mouse">
+   </LINK>
+   <NODE componentmode="Hidden" id="0" nodename="Vector (2d Join)" systemname="Vector (2d Join)">
+   <BOUNDS height="100" left="1950" top="2760" type="Node" width="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="W" visible="1">
+   </PIN>
+   <PIN pinname="XYZW" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="0" dstpinname="X" linkstyle="Bezier" srcnodeid="7" srcpinname="X">
+   <LINKPOINT x="860" y="2445">
+   </LINKPOINT>
+   <LINKPOINT x="1735" y="2445">
+   </LINKPOINT>
+   </LINK>
+   <LINK dstnodeid="0" dstpinname="Y" linkstyle="Bezier" srcnodeid="7" srcpinname="Y">
+   <LINKPOINT x="1505" y="2460">
+   </LINKPOINT>
+   <LINKPOINT x="1960" y="2460">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="XY" dstnodeid="32" dstpinname="PositionXY">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Layer" dstnodeid="27" dstpinname="Layer 2">
+   <LINKPOINT x="3330" y="5235">
+   </LINKPOINT>
+   <LINKPOINT x="2595" y="5235">
+   </LINKPOINT>
+   <LINKPOINT x="2595" y="975">
+   </LINKPOINT>
+   <LINKPOINT x="840" y="975">
+   </LINKPOINT>
+   </LINK>
+   <PACK Name="Image" Version="0.2.0">
+   </PACK>
+   <NODE systemname="GetWindowInfo (Value)" filename="..\..\vvvv.nodes\plugins\ValueGetWindowInfo\ValueGetWindowInfo.csproj" nodename="GetWindowInfo (Value)" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="4290" top="5625" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Window Handle" visible="1">
+   </PIN>
+   <PIN pinname="Left" visible="1">
+   </PIN>
+   <PIN pinname="Top" visible="1">
+   </PIN>
+   <PIN pinname="Right" visible="1">
+   </PIN>
+   <PIN pinname="Bottom" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Window Handle" dstnodeid="42" dstpinname="Window Handle" linkstyle="Bezier">
+   <LINKPOINT x="660" y="3878">
+   </LINKPOINT>
+   <LINKPOINT x="4275" y="3878">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="ClipCursor (System)" filename="..\..\vvvv.nodes\plugins\SystemClipCursor\SystemClipCursor.csproj" nodename="ClipCursor (System)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="4290" top="6195" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Left" visible="1">
+   </PIN>
+   <PIN pinname="Top" visible="1">
+   </PIN>
+   <PIN pinname="Right" visible="1">
+   </PIN>
+   <PIN pinname="Bottom" visible="1">
+   </PIN>
+   <PIN pinname="Clip" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="42" srcpinname="Left" dstnodeid="43" dstpinname="Left">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Top" dstnodeid="43" dstpinname="Top">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Right" dstnodeid="43" dstpinname="Right">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Bottom" dstnodeid="43" dstpinname="Bottom">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="44">
+   <BOUNDS type="Node" left="6900" top="435" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6900" top="435" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Lock Cursor to Projection|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="44" srcpinname="Y Output Value" dstnodeid="43" dstpinname="Clip" linkstyle="VHV">
+   <LINKPOINT x="6930" y="6075">
+   </LINKPOINT>
+   <LINKPOINT x="5280" y="6075">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

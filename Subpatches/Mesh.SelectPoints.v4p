@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
-   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Mesh.SelectPoints.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Mesh.SelectPoints.v4p" systemname="Mesh.SelectPoints" locked="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.dtd" >
+   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Mesh.SelectPoints.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Mesh.SelectPoints.v4p" systemname="Mesh.SelectPoints" locked="0" scrollx="0" scrolly="5400">
    <BOUNDS height="14685" left="9975" top="735" type="Window" width="13905">
    </BOUNDS>
    <NODE componentmode="Hidden" filename="..\Modules\Intersect (3d Vector Ex9.Geometry Alt).v4p" id="0" nodename="Intersect (3d Vector Ex9.Geometry Alt)" systemname="Intersect (3d Vector Ex9.Geometry Alt)">
@@ -1016,6 +1016,8 @@
    </LINK>
    <PACK Name="imagepack" Version="0.1.0">
    </PACK>
-   <PACK Name="addonpack" Version="31.9.0">
+   <PACK Name="addonpack" Version="33.0.0">
+   </PACK>
+   <PACK Name="Image" Version="0.2.0">
    </PACK>
    </PATCH>

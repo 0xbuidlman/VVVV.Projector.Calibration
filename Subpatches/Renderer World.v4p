@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta32.1.dtd" >
-   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Renderer World.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer World.v4p" systemname="Renderer World">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.dtd" >
+   <PATCH nodename="C:\vvvv\projects\vvvv.projector.calibration\Subpatches\Renderer World.v4p" filename="C:\kimchiandchips\Workshops\VVVV.Tutorials.Mapping2-3D\Subpatches\Renderer World.v4p" systemname="Renderer World" scrollx="0" scrolly="-360">
    <BOUNDS height="12840" left="-15165" top="2025" type="Window" width="11475">
    </BOUNDS>
    <NODE componentmode="InAWindow" id="7" nodename="Renderer (EX9)" systemname="Renderer (EX9)">
@@ -7,7 +7,7 @@
    </BOUNDS>
    <BOUNDS height="7020" left="615" top="6360" type="Box" width="11400">
    </BOUNDS>
-   <BOUNDS height="7695" left="14295" top="0" type="Window" width="11550">
+   <BOUNDS height="7695" left="15255" top="1365" type="Window" width="11550">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -85,7 +85,7 @@
    </PIN>
    <PIN pinname="Layer 1" visible="1">
    </PIN>
-   <PIN pinname="Layer 3" visible="1">
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK dstnodeid="7" dstpinname="Layers" srcnodeid="17" srcpinname="Layer">
@@ -157,24 +157,6 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="20" dstpinname="Y Input Value" srcnodeid="1" srcpinname="XYZW">
-   </LINK>
-   <NODE componentmode="Hidden" filename="..\modules\Mouse Cursor (DX9).v4p" id="24" nodename="Cursor (DX9)" systemname="Cursor (DX9)">
-   <BOUNDS height="100" left="2070" top="3540" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="Mouse XYZL" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="17805" top="7815" width="4095" height="6075">
-   </BOUNDS>
-   </NODE>
-   <LINK dstnodeid="17" dstpinname="Layer 3" srcnodeid="24" srcpinname="Layer">
-   </LINK>
-   <LINK dstnodeid="24" dstpinname="Mouse XYZL" linkstyle="Bezier" srcnodeid="1" srcpinname="XYZW">
-   <LINKPOINT x="645" y="5630">
-   </LINKPOINT>
-   <LINKPOINT x="2070" y="5380">
-   </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" hiddenwhenlocked="1" id="28" nodename="GetMatrix (Transform)" systemname="GetMatrix (Transform)">
    <BOUNDS height="100" left="1440" top="10515" type="Node" width="100">
@@ -578,7 +560,7 @@
    </LINK>
    <PACK Name="imagepack" Version="0.1.0">
    </PACK>
-   <PACK Name="addonpack" Version="31.9.0">
+   <PACK Name="addonpack" Version="33.0.0">
    </PACK>
    <NODE systemname="TogEdge (Animation)" nodename="TogEdge (Animation)" componentmode="Hidden" id="55">
    <BOUNDS type="Node" left="9285" top="1200" width="100" height="100">
@@ -610,4 +592,42 @@
    </LINK>
    <LINK srcnodeid="56" srcpinname="Output" dstnodeid="36" dstpinname="XYZ UnTransformed">
    </LINK>
+   <NODE systemname="Cursor (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\Cursor (DX9).v4p" nodename="Cursor (DX9)" componentmode="Hidden" id="57">
+   <BOUNDS type="Node" left="2085" top="3870" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mouse" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="MouseStates (Mouse Join)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="MouseStates (Mouse Join)" componentmode="Hidden" id="58">
+   <BOUNDS type="Node" left="2115" top="2955" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="PositionXY" visible="1" slicecount="4" values="-0.954847277556441,-0.60676532769556,0,0">
+   </PIN>
+   <PIN pinname="Mouse" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Vector (2d Join)" nodename="Vector (2d Join)" componentmode="Hidden" id="59">
+   <BOUNDS type="Node" left="750" top="6750" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="X" dstnodeid="59" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Y" dstnodeid="59" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="XY" dstnodeid="58" dstpinname="PositionXY">
+   </LINK>
+   <LINK srcnodeid="58" srcpinname="Mouse" dstnodeid="57" dstpinname="Mouse">
+   </LINK>
+   <LINK srcnodeid="57" srcpinname="Layer" dstnodeid="17" dstpinname="Layer 3">
+   </LINK>
+   <PACK Name="Image" Version="0.2.0">
+   </PACK>
    </PATCH>
